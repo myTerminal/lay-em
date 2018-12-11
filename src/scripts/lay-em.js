@@ -59,8 +59,21 @@ function updateLayoutOnDimensionChange(element) {
 }
 
 function refreshLayout() {
-    layoutMap.horizontal.forEach(m => layHorizontally(m.parent, m.fixedElements, m.mappedVariableElements));
-    layoutMap.vertical.forEach(m => layVertically(m.parent, m.fixedElements, m.mappedVariableElements));
+    layoutMap.horizontal.forEach(
+        m => layHorizontally(
+            m.parent,
+            m.fixedElements,
+            m.mappedVariableElements
+        )
+    );
+
+    layoutMap.vertical.forEach(
+        m => layVertically(
+            m.parent,
+            m.fixedElements,
+            m.mappedVariableElements
+        )
+    );
 }
 
 export {
