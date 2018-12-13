@@ -1,7 +1,7 @@
 /* global require module __dirname */
 
 const libraryFileName = 'lay-em';
-const libraryName = 'LayEm';
+const libraryName = 'layEm';
 
 const sourceDir = 'src';
 const outputDir = 'build';
