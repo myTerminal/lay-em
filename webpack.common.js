@@ -81,5 +81,13 @@ module.exports = {
         library: libraryName,
         libraryTarget: 'umd',
         umdNamedDefine: true
+    },
+    externals: {
+        jquery: {
+            commonjs: 'jquery',
+            commonjs2: 'jquery',
+            amd: 'jquery',
+            root: '$'
+        }
     }
 };
