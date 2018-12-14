@@ -23,10 +23,20 @@ body {
 
 #navigator {
     background-color: orange;
+    transition: 0.5s;
 }
 
 #stage {
     background-color: yellow;
+    transition: 0.5s;
+}
+
+.canvas {
+    display: inline-block;
+    float: left;
+    height: 100%;
+    border: 1px solid gray;
+    transition: 0.5s;
 }
 
 #statusbar {
