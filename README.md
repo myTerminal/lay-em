@@ -11,4 +11,4 @@
 [![License](https://img.shields.io/github/license/myTerminal/lay-em.svg)](https://opensource.org/licenses/MIT)  
 [![NPM](https://nodei.co/npm/lay-em.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/lay-em/)
 
-A library to create cross-browser, self-adjusting HTML layouts [coming soon]
+A library to create cross-browser, self-adjusting HTML layouts [in progress]

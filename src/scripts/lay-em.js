@@ -166,7 +166,21 @@ function refreshLayout() {
 }
 
 function destroyLayout() {
+    layoutMap.horizontal.forEach(
+        hl => hl.mappedVariableElements.forEach(
+            v => {
+                v.element.style.width = '';
+            }
+        )
+    );
 
+    layoutMap.vertical.forEach(
+        vl => vl.mappedVariableElements.forEach(
+            v => {
+                v.element.style.height = '';
+            }
+        )
+    );
 }
 
 export {
