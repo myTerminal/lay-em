@@ -19,7 +19,7 @@ const extractCSS = new ExtractTextPlugin('styles/' + libraryFileName + '.css');
 module.exports = {
     mode: 'development',
     entry: {
-        library: './' + sourceDir + '/scripts/' + libraryFileName + '.js'
+        [libraryFileName]: './' + sourceDir + '/scripts/' + libraryFileName + '.js'
     },
     module: {
         rules: [
@@ -76,7 +76,7 @@ module.exports = {
         extractCSS
     ],
     output: {
-        filename: 'scripts/' + libraryFileName + '.js',
+        filename: 'scripts/[name].js',
         path: path.resolve(__dirname, outputDir),
         library: libraryName,
         libraryTarget: 'umd',
