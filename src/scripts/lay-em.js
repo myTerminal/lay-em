@@ -79,7 +79,7 @@ function storeLayout(parentElement, fixedElements, mappedVariableElements, direc
     layoutMap[direction].push({
         parent: parentElement,
         fixedElements,
-        mappedVariableElements
+        variableElements: mappedVariableElements
     });
 }
 
@@ -98,11 +98,11 @@ function refreshLayoutForToggleOnChildElements(element) {
         hl => {
             const matchesFixedElement = hl.fixedElements
                     .filter(fe => fe === element).length,
-                matchesVariableElement = hl.mappedVariableElements
+                matchesVariableElement = hl.variableElements
                     .filter(ve => ve.element === element).length;
 
             if (matchesFixedElement || matchesVariableElement) {
-                layHorizontally(hl.parent, hl.fixedElements, hl.mappedVariableElements);
+                setWidths(hl.parent, hl.fixedElements, hl.variableElements);
             }
         }
     );
@@ -111,11 +111,11 @@ function refreshLayoutForToggleOnChildElements(element) {
         vl => {
             const matchesFixedElement = vl.fixedElements
                     .filter(fe => fe === element).length,
-                matchesVariableElement = vl.mappedVariableElements
+                matchesVariableElement = vl.variableElements
                     .filter(ve => ve.element === element).length;
 
             if (matchesFixedElement || matchesVariableElement) {
-                layVertically(vl.parent, vl.fixedElements, vl.mappedVariableElements);
+                setHeights(vl.parent, vl.fixedElements, vl.variableElements);
             }
         }
     );
@@ -129,7 +129,7 @@ function updateLayoutOnDimensionChange(element) {
                 matchesParentElement = hl.parent === element;
 
             if (matchesFixedElement || matchesParentElement) {
-                layHorizontally(hl.parent, hl.fixedElements, hl.mappedVariableElements);
+                setWidths(hl.parent, hl.fixedElements, hl.variableElements);
             }
         }
     );
@@ -141,7 +141,7 @@ function updateLayoutOnDimensionChange(element) {
                 matchesParentElement = vl.parent === element;
 
             if (matchesFixedElement || matchesParentElement) {
-                layVertically(vl.parent, vl.fixedElements, vl.mappedVariableElements);
+                setHeights(vl.parent, vl.fixedElements, vl.variableElements);
             }
         }
     );
@@ -149,25 +149,25 @@ function updateLayoutOnDimensionChange(element) {
 
 function refreshLayout() {
     layoutMap.horizontal.forEach(
-        m => layHorizontally(
+        m => setWidths(
             m.parent,
             m.fixedElements,
-            m.mappedVariableElements
+            m.variableElements
         )
     );
 
     layoutMap.vertical.forEach(
-        m => layVertically(
+        m => setHeights(
             m.parent,
             m.fixedElements,
-            m.mappedVariableElements
+            m.variableElements
         )
     );
 }
 
 function destroyLayout() {
     layoutMap.horizontal.forEach(
-        hl => hl.mappedVariableElements.forEach(
+        hl => hl.variableElements.forEach(
             v => {
                 v.element.style.width = '';
             }
@@ -175,7 +175,7 @@ function destroyLayout() {
     );
 
     layoutMap.vertical.forEach(
-        vl => vl.mappedVariableElements.forEach(
+        vl => vl.variableElements.forEach(
             v => {
                 v.element.style.height = '';
             }
