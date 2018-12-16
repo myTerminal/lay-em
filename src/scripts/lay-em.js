@@ -183,6 +183,12 @@ function destroyLayout() {
     );
 }
 
+function clearLayoutMap() {
+    destroyLayout();
+    layoutMap.horizontal = [];
+    layoutMap.vertical = [];
+}
+
 export {
     layHorizontally,
     layVertically,
@@ -190,5 +196,6 @@ export {
     hideElement,
     updateLayoutOnDimensionChange,
     refreshLayout,
-    destroyLayout
+    destroyLayout,
+    clearLayoutMap
 };
