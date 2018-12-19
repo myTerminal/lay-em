@@ -1,4 +1,4 @@
-const context = require.context('./src', true, /\.test\.jsx?$/);
+const context = require.context('./tests', true, /\.test\.jsx?$/);
 
 context.keys().forEach(context);
 
