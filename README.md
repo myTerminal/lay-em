@@ -15,7 +15,7 @@ A library to create cross-browser, self-adjusting HTML layouts
 
 ## Features
 
-* Creates perfecly fitting layouts on request
+* Creates perfectly fitting layouts on request
 * A simple abstraction over DOM manipulations
 
 ## How to Use
