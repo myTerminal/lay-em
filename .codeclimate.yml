@@ -1,3 +1,4 @@
 exclude_paths:
 - "build"
 - "examples"
+- "karma.conf.js"
