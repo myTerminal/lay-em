@@ -178,10 +178,6 @@ Clears the layout information from memory.
 
 You can view a demo [here](https://myterminal.github.io/lay-em/examples).
 
-## Dependencies
-
-* [jQuery](https://www.npmjs.com/package/jquery)
-
 ## To-do
 
 * Write unit-tests
