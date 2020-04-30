@@ -27,7 +27,7 @@
   "author": "Mohammed Ismail Ansari <team.terminal@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "jquery": "3.3.1"
+    "jquery": "3.5.0"
   },
   "devDependencies": {
     "babel-core": "6.26.3",
