@@ -1,6 +1,6 @@
 {
   "name": "lay-em",
-  "version": "0.9.2",
+  "version": "0.9.3",
   "description": "A library to create cross-browser, self-adjusting HTML layouts",
   "main": "build/scripts/lay-em.js",
   "files": [
